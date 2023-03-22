@@ -1,0 +1,13 @@
+<%-include("partials/header");-%>
+<h1><%=BlogTitle%></h1>
+<p><%=StartContent%></p>
+<% BlogContent.forEach(function(post){%>
+    <% console.log(post.title) %>
+    <h1><%=post.title%></h1>
+    <%let truncatedContent=(post.body).substring(0,100);%>
+    <%truncatedContent=truncatedContent+" ..."%>
+    <p style="display:inline-block;"><%=truncatedContent%></p>
+    <a href="/post/<%=post.title%>">Read More</a>
+<%});%>
+
+<%-include("partials/footer");-%>
